@@ -31,7 +31,17 @@ overmind.path = "overmind"
 
 [hook]
 script = """
-    overmind start -D
+    overmind start -D &> /dev/null
+cat << EOF
+Usage:
+    'ollama pull <model>'        : Download the model for an LLM to use locally.
+    'ollama run <model>'         : Chat with the LLM.
+    'ollama run <model> <prompt>': Pass a prompt as an argument.
+
+Tips:
+- Recommended models: mistral, llama2 (see more at https://ollama.ai/library)
+- Customize models with a Modelfile: https://github.com/ollama/ollama/blob/main/README.md#customize-a-prompt
+EOF
 """
 
 # An environment that works on one system is guaranteed to work on the
