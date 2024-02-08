@@ -2,7 +2,7 @@
   "lockfile-version": 0,
   "manifest": {
     "hook": {
-      "script": "    overmind start -D\n"
+      "script": "    overmind start -D &> /dev/null\ncat << EOF\nUsage:\n    'ollama pull <model>'        : Download the model for an LLM to use locally.\n    'ollama run <model>'         : Chat with the LLM.\n    'ollama run <model> <prompt>': Pass a prompt as an argument.\n\nTips:\n- Recommended models: mistral, llama2 (see more at https://ollama.ai/library)\n- Customize models with a Modelfile: https://github.com/ollama/ollama/blob/main/README.md#customize-a-prompt\nEOF\n"
     },
     "install": {
       "ollama": {
